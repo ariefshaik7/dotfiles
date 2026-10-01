@@ -129,18 +129,22 @@ alias depc="docker exec -it praja-api rails c"
 alias dep="docker exec -it praja-api /bin/bash"
 
 # Rails Console Aliases
-alias ppc="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-preprod-' | head -n 1) -- rails c"
-alias pp1c="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp1-' | head -n 1) -- rails c"
-alias pp2c="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- rails c"
-alias pp3c="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- rails c"
-alias pp4c="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- rails c"
- 
+alias ppc="kubectl exec -nror svc/ror-api -it -- rails c"
+alias pp1c="kubectl exec -nror svc/ror-api-pp1 -it -- rails c"
+alias pp2c="kubectl exec -nror svc/ror-api-pp2 -it -- rails c"
+alias pp3c="kubectl exec -nror svc/ror-api-pp3 -it -- rails c"
+alias pp4c="kubectl exec -nror svc/ror-api-pp4 -it -- rails c"
+alias pppc="kubectl exec -nror svc/ror-api-preprod -it -- rails c"
+
+
 # Pod Bash Exec Aliases
-alias pp="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-preprod-' | head -n 1) -- bash"
-alias pp1="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp1-' | head -n 1) -- bash"
-alias pp2="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- bash"
-alias pp3="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- bash"
-alias pp4="kubectl exec -it -n ror \$(kubectl get pods -n ror -o name | grep 'ror-api-pp2-' | head -n 1) -- bash"
+alias pp="kubectl exec -nror svc/ror-api -it -- bash"
+alias pp1="kubectl exec -nror svc/ror-api -it -- bash"
+alias pp2="kubectl exec -nror svc/ror-api -it -- bash"
+alias pp3="kubectl exec -nror svc/ror-api -it -- bash"
+alias pp4="kubectl exec -nror svc/ror-api-pp4 -it -- bash"
+alias ppp="kubectl exec -nror svc/ror-api-preprod -it -- bash"
+
 
 
 # bun completions
