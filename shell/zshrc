@@ -125,16 +125,22 @@ compinit
 
 alias w="watch -n 1"
 alias ror="watch -n 1 kubectl get pods -n ror"
+alias msg="watch -n 1 kubectl get pods -n messaging-service"
+alias media="watch -n 1 kubectl get pods -n media-service"
+alias garuda="watch -n 1 kubectl get pods -n garuda"
+alias bg="watch -n 1 kubectl get pods -n background-removal"
+alias jenkins="watch -n 1 kubectl get pods -n jenkins"
+
+
 alias depc="docker exec -it praja-api rails c"
 alias dep="docker exec -it praja-api /bin/bash"
 
 # Rails Console Aliases
-alias ppc="kubectl exec -nror svc/ror-api -it -- rails c"
 alias pp1c="kubectl exec -nror svc/ror-api-pp1 -it -- rails c"
 alias pp2c="kubectl exec -nror svc/ror-api-pp2 -it -- rails c"
 alias pp3c="kubectl exec -nror svc/ror-api-pp3 -it -- rails c"
 alias pp4c="kubectl exec -nror svc/ror-api-pp4 -it -- rails c"
-alias pppc="kubectl exec -nror svc/ror-api-preprod -it -- rails c"
+alias ppc="kubectl exec -nror svc/ror-api-preprod -it -- rails c"
 
 
 # Pod Bash Exec Aliases
@@ -145,6 +151,7 @@ alias pp3="kubectl exec -nror svc/ror-api -it -- bash"
 alias pp4="kubectl exec -nror svc/ror-api-pp4 -it -- bash"
 alias ppp="kubectl exec -nror svc/ror-api-preprod -it -- bash"
 
+alias pc="kubectl exec -n ror svc/ror-api -it -- rails c"
 
 
 # bun completions
@@ -162,3 +169,6 @@ export PATH="/Users/arief/.antigravity-ide/antigravity-ide/bin:$PATH"
 
 # Added by px0 installer
 export PATH="/Users/arief/.local/bin:$PATH"
+
+# Added for Ollama
+export PATH="/Applications/Ollama.app/Contents/Resources:$PATH"
